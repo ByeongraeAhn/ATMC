@@ -10,38 +10,46 @@ public class App {
     private static Robot robot;
     private static Color color;
 
-    private static int startPointX = 2335;
-    private static int startPointY = 255;
+    // private static int startPointX = 2335;
+    // private static int startPointY = 255;
+    private static int startPointX = 2190;
+    private static int startPointY = 360;
 
-    private static final int X_GAP = 65;
-    private static final int Y_GAP = 65;
+    // private static final int X_GAP = 65;
+    // private static final int Y_GAP = 65;
+    private static final int X_GAP = 46;
+    private static final int Y_GAP = 46;
 
     private static int pageIndex = 1;
 
     public static void main(String[] args) throws Exception {
         robot = new Robot();
 
-        // startBlack(1000);
+        startBlack(1000);
 
-        // openInventory(3000);
+        openInventory(1000);
+
+        closeInventory(500);
+
+        openInventory(500);
 
         arrangeItem(1000, startPointX, startPointY);
 
-        // closeInventory(1000);
+        closeInventory(1000);
 
-        // exitBlack(1000);
+        exitBlack(1000);
 
     }
 
     static private void startBlack(int delayTime) {
         robot.delay(delayTime);
-        robot.mouseMove(500, 500);
+        robot.mouseMove(2344, 1057);
         robot.delay(500);
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         robot.delay(50);
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         robot.delay(1000);
-        robot.mouseMove(400, 400);
+        robot.mouseMove(2344, 972);
         robot.delay(500);
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         robot.delay(50);
@@ -65,12 +73,13 @@ public class App {
         int x = startPointX;
         int y = startPointY;
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
-                robot.delay(200);
+                robot.delay(50);
                 robot.mouseMove(x, y);
                 color = getColorInfo(x, y);
-                if (color.getGreen() > 150 && color.getRed() < 140 ) {
+                // if (color.getGreen() > 150 && color.getRed() < 140 ) {
+                if((color.getGreen()>100 && color.getGreen()<150) && color.getRed() < 140 && color.getBlue() <110 ) {
                     System.out.println((i+1)+"Row, " + (j+1) + "Column is Green");
                     deleteItem(1000, x , y-5);
                 }
@@ -80,7 +89,7 @@ public class App {
             y += Y_GAP;
         }
         
-        if (pageIndex < 1) {
+        if (pageIndex < 3) {
             scrollNextPage(1000);
             arrangeItem(1000, startPointX, startPointY);
         }
@@ -97,30 +106,36 @@ public class App {
     }
 
     static private void deleteItem(int delayTime, int x, int y) {
-        // robot.delay(delayTime);
-        // robot.mouseMove(x, y);
-        // robot.delay(1000);
-        // robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-        // robot.delay(1000);
-        // robot.mouseMove(1872, 800);
-        // robot.delay(1000);
-        // robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-        // robot.delay(1000);
-        // robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-        // robot.delay(1000);
-        // robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-        // robot.delay(1000);
-        // robot.keyPress(KeyEvent.VK_ENTER);
-        // robot.keyRelease(KeyEvent.VK_ENTER);
+        robot.delay(delayTime);
+        robot.mouseMove(x, y+20);
+        robot.delay(300);
+        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+        robot.delay(300);
+        robot.mouseMove(2507, 794);
+        robot.delay(300);
+        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+        robot.delay(300);
+        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+        robot.delay(300);
+        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+        robot.delay(300);
+        robot.keyPress(KeyEvent.VK_F);
+        robot.keyRelease(KeyEvent.VK_F);
+        robot.delay(300);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+        robot.delay(300);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
     }
 
     static private void scrollNextPage(int delayTime) {
-        // robot.delay(delayTime);
-        // robot.mouseMove(startPointX, startPointY);
-        // for (int i = 0; i < 8; i++) {
-        //     robot.delay(100);
-        //     robot.mouseWheel(1);
-        // }
+        robot.delay(delayTime);
+        robot.mouseMove(startPointX, startPointY);
+        for (int i = 0; i < 8; i++) {
+            robot.delay(100);
+            robot.mouseWheel(1);
+        }
         pageIndex++;
     }
 
@@ -136,13 +151,13 @@ public class App {
         robot.delay(delayTime);
         robot.keyPress(KeyEvent.VK_ESCAPE);
         robot.delay(1000);
-        robot.mouseMove(600, 800);
+        robot.mouseMove(1387, 699);
         robot.delay(500);
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         robot.delay(50);
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         robot.delay(1000);
-        robot.mouseMove(400, 400);
+        robot.mouseMove(1353, 611);
         robot.delay(500);
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         robot.delay(50);
