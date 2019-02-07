@@ -44,13 +44,13 @@ public class App {
     static private void startBlack(int delayTime) {
         robot.delay(delayTime);
         robot.mouseMove(2344, 1057);
-        robot.delay(500);
+        robot.delay(300);
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         robot.delay(50);
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-        robot.delay(1000);
+        robot.delay(300);
         robot.mouseMove(2344, 972);
-        robot.delay(500);
+        robot.delay(300);
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         robot.delay(50);
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
@@ -80,8 +80,13 @@ public class App {
                 color = getColorInfo(x, y);
                 // if (color.getGreen() > 150 && color.getRed() < 140 ) {
                 if((color.getGreen()>100 && color.getGreen()<150) && color.getRed() < 140 && color.getBlue() <110 ) {
-                    System.out.println((i+1)+"Row, " + (j+1) + "Column is Green");
-                    deleteItem(1000, x , y-5);
+                    robot.mouseMove(x, y+15);
+                    robot.delay(100);
+                    color = getColorInfo(2025, 289);
+                    if(color.getGreen()<150) {
+                        System.out.println((i+1)+"Row, " + (j+1) + "Column is Green");
+                        deleteItem(1000, x , y);
+                    }
                 }
                 x += X_GAP;
             }
@@ -107,10 +112,10 @@ public class App {
 
     static private void deleteItem(int delayTime, int x, int y) {
         robot.delay(delayTime);
-        robot.mouseMove(x, y+20);
-        robot.delay(300);
+        robot.mouseMove(x, y+15);
+        robot.delay(100);
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-        robot.delay(300);
+        robot.delay(100);
         robot.mouseMove(2507, 794);
         robot.delay(300);
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
@@ -122,8 +127,11 @@ public class App {
         robot.keyPress(KeyEvent.VK_F);
         robot.keyRelease(KeyEvent.VK_F);
         robot.delay(300);
-        robot.keyPress(KeyEvent.VK_ENTER);
-        robot.keyRelease(KeyEvent.VK_ENTER);
+        robot.mouseMove(2429, 1031);
+        robot.delay(300);
+        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+        robot.delay(300);
+        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         robot.delay(300);
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
