@@ -158,6 +158,8 @@ public class FishMain {
     static private void exitBlack(int delayTime) {
         robot.delay(delayTime);
         robot.keyPress(KeyEvent.VK_ESCAPE);
+        robot.delay(50);
+        robot.keyRelease(KeyEvent.VK_ESCAPE);
         robot.delay(1000);
         robot.mouseMove(1387, 699);
         robot.delay(500);
