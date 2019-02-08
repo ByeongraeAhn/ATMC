@@ -27,17 +27,17 @@ public class App {
 
         startBlack(1000);
 
-        openInventory(1000);
+        // openInventory(1000);
 
-        closeInventory(500);
+        // closeInventory(500);
 
-        openInventory(500);
+        // openInventory(500);
 
-        arrangeItem(1000, startPointX, startPointY);
+        // arrangeItem(1000, startPointX, startPointY);
 
-        closeInventory(1000);
+        // closeInventory(1000);
 
-        exitBlack(1000);
+        // exitBlack(1000);
 
     }
 
