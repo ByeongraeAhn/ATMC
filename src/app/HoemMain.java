@@ -19,17 +19,19 @@ public class HoemMain {
 
         closeInventory(1000);
 
-        clickShipIcon(1000);
+        clickKey(KeyEvent.VK_CONTROL);
 
         clickShipIcon(1000);
 
-        moveShip(3000);
+        clickShipIcon(1000);
 
-        exitToHome(15000);
+        moveShip(2000);
 
-        moveToSaka(1000);
+        exitToHome(360000);
 
-        exitBlack(1000);
+        moveToSaka(25000);
+
+        exitBlack(25000);
     }
 
     static private void startBlack(int delayTime) {
@@ -47,9 +49,9 @@ public class HoemMain {
 
     static private void releaseRod(int delayTime) {
         robot.delay(delayTime);
-        clickMouseRight(9999999, 9999999);
+        clickMouseRight(1908, 559);
     }
-    
+
     static private void closeInventory(int delayTime) {
         robot.delay(delayTime);
         clickKey(KeyEvent.VK_ESCAPE);
@@ -58,7 +60,7 @@ public class HoemMain {
 
     static private void clickShipIcon(int delayTime) {
         robot.delay(delayTime);
-        clickMouseLeft(9999999, 9999999);
+        clickMouseLeft(28, 148);
     }
 
     static private void moveShip(int delayTime) {
@@ -69,7 +71,7 @@ public class HoemMain {
     static private void exitToHome(int delayTime) {
         robot.delay(delayTime);
         clickKey(KeyEvent.VK_ESCAPE);
-        clickMouseLeft(9999999, 9999999);
+        clickMouseLeft(1335, 408);
         clickKey(KeyEvent.VK_ENTER);
     }
 
@@ -77,10 +79,16 @@ public class HoemMain {
         robot.delay(delayTime);
         clickKey(KeyEvent.VK_ESCAPE);
         clickMouseLeft(1387, 699);
-
-
-
-
+        clickMouseLeft(1511, 571);
+        clickMouseLeft(1334, 464);
+        robot.mouseMove(1334, 464 + 15);
+        scrollWheel(7);
+        clickMouseLeft(1277, 528);
+        clickMouseLeft(1319, 505);
+        robot.mouseMove(1319, 505 + 15);
+        clickMouseLeft(1324, 520);
+        clickMouseLeft(1373, 650);
+        clickKey(KeyEvent.VK_ENTER);
     }
 
     static private void exitBlack(int delayTime) {
@@ -90,13 +98,11 @@ public class HoemMain {
         clickMouseLeft(1353, 611);
     }
 
-
-
-//////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////
 
     static private void clickMouseLeft(int x, int y) {
-        robot.mouseMove(1387, 699);
-        robot.delay(100);
+        robot.mouseMove(x, y);
+        robot.delay(300);
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         robot.delay(50);
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
@@ -104,8 +110,8 @@ public class HoemMain {
     }
 
     static private void clickMouseRight(int x, int y) {
-        robot.mouseMove(1387, 699);
-        robot.delay(100);
+        robot.mouseMove(x, y);
+        robot.delay(300);
         robot.mousePress(InputEvent.BUTTON3_DOWN_MASK);
         robot.delay(50);
         robot.mouseRelease(InputEvent.BUTTON3_DOWN_MASK);
@@ -113,10 +119,19 @@ public class HoemMain {
     }
 
     static private void clickKey(int keyCode) {
+        robot.delay(300);
         robot.keyPress(keyCode);
         robot.delay(50);
         robot.keyRelease(keyCode);
         robot.delay(200);
+    }
+
+    static private void scrollWheel(int num) {
+        robot.delay(300);
+        for (int i = 0; i < num; i++) {
+            robot.delay(100);
+            robot.mouseWheel(1);
+        }
     }
 
 }
