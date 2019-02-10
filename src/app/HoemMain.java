@@ -27,11 +27,11 @@ public class HoemMain {
 
         moveShip(2000);
 
-        exitToHome(360000);
+        exitToHome();
 
-        moveToSaka(25000);
+        moveToSaka(20000);
 
-        exitBlack(25000);
+        exitBlack(30000);
     }
 
     static private void startBlack(int delayTime) {
@@ -68,8 +68,13 @@ public class HoemMain {
         clickKey(KeyEvent.VK_T);
     }
 
-    static private void exitToHome(int delayTime) {
-        robot.delay(delayTime);
+    static private void exitToHome() {
+        robot.delay(60000);
+        robot.delay(60000);
+        robot.delay(60000);
+        robot.delay(60000);
+        robot.delay(60000);
+        robot.delay(60000);
         clickKey(KeyEvent.VK_ESCAPE);
         clickMouseLeft(1335, 408);
         clickKey(KeyEvent.VK_ENTER);
@@ -131,6 +136,7 @@ public class HoemMain {
         for (int i = 0; i < num; i++) {
             robot.delay(100);
             robot.mouseWheel(1);
+            robot.delay(200);
         }
     }
 

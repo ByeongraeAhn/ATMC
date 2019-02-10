@@ -43,27 +43,17 @@ public class FishMain {
 
     static private void startBlack(int delayTime) {
         robot.delay(delayTime);
-        robot.mouseMove(2344, 1057);
-        robot.delay(300);
-        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-        robot.delay(50);
-        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-        robot.delay(300);
-        robot.mouseMove(2344, 972);
-        robot.delay(300);
-        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-        robot.delay(50);
-        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+        clickMouseLeft(2344, 1057);
+        clickMouseLeft(2344, 972);
         System.out.println("Start Black");
     }
 
     static private void openInventory(int delayTime) {
         robot.delay(delayTime);
-        robot.keyPress(KeyEvent.VK_I);
-        robot.delay(50);
-        robot.keyRelease(KeyEvent.VK_I);
+        clickKey(KeyEvent.VK_I);
         System.out.println("Open Inventory");
     }
+
 
     static private void arrangeItem(int delayTime, int startPointX, int startPointY) {
         robot.delay(delayTime);
@@ -104,9 +94,6 @@ public class FishMain {
 
     static private Color getColorInfo(int x, int y) {
         color = robot.getPixelColor(x, y);
-        // System.out.println("X Position : " + x);
-        // System.out.println("Y Position : " + y);
-        // System.out.println("RGB : " + color.toString());
         return color;
     }
 
@@ -123,56 +110,67 @@ public class FishMain {
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         robot.delay(300);
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-        robot.delay(300);
-        robot.keyPress(KeyEvent.VK_F);
-        robot.keyRelease(KeyEvent.VK_F);
-        robot.delay(300);
-        robot.mouseMove(2429, 1031);
-        robot.delay(300);
-        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-        robot.delay(300);
-        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-        robot.delay(300);
-        robot.keyPress(KeyEvent.VK_ENTER);
-        robot.keyRelease(KeyEvent.VK_ENTER);
+
+        clickKey(KeyEvent.VK_F);
+        clickMouseLeft(2429,1031);
+        clickKey(KeyEvent.VK_ENTER);
     }
 
     static private void scrollNextPage(int delayTime) {
         robot.delay(delayTime);
         robot.mouseMove(startPointX, startPointY);
-        for (int i = 0; i < 8; i++) {
-            robot.delay(100);
-            robot.mouseWheel(1);
-        }
+        scrollWheel(8);
         pageIndex++;
     }
 
     static private void closeInventory(int delayTime) {
         robot.delay(delayTime);
-        robot.keyPress(KeyEvent.VK_ESCAPE);
-        robot.delay(50);
-        robot.keyRelease(KeyEvent.VK_ESCAPE);
+        clickKey(KeyEvent.VK_ESCAPE);
         System.out.println("Close Inventory");
     }
 
+
     static private void exitBlack(int delayTime) {
         robot.delay(delayTime);
-        robot.keyPress(KeyEvent.VK_ESCAPE);
-        robot.delay(50);
-        robot.keyRelease(KeyEvent.VK_ESCAPE);
-        robot.delay(1000);
-        robot.mouseMove(1387, 699);
-        robot.delay(500);
-        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-        robot.delay(50);
-        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-        robot.delay(1000);
-        robot.mouseMove(1353, 611);
-        robot.delay(500);
-        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-        robot.delay(50);
-        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+        clickKey(KeyEvent.VK_ESCAPE);
+        clickMouseLeft(1387, 699);
+        clickMouseLeft(1353, 611);
+    }
 
+    //////////////////////////////////////////////////////////////////////
+
+    static private void clickMouseLeft(int x, int y) {
+        robot.mouseMove(x, y);
+        robot.delay(300);
+        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+        robot.delay(50);
+        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+        robot.delay(200);
+    }
+
+    static private void clickMouseRight(int x, int y) {
+        robot.mouseMove(x, y);
+        robot.delay(300);
+        robot.mousePress(InputEvent.BUTTON3_DOWN_MASK);
+        robot.delay(50);
+        robot.mouseRelease(InputEvent.BUTTON3_DOWN_MASK);
+        robot.delay(200);
+    }
+
+    static private void clickKey(int keyCode) {
+        robot.delay(300);
+        robot.keyPress(keyCode);
+        robot.delay(50);
+        robot.keyRelease(keyCode);
+        robot.delay(200);
+    }
+
+    static private void scrollWheel(int num) {
+        robot.delay(300);
+        for (int i = 0; i < num; i++) {
+            robot.delay(100);
+            robot.mouseWheel(1);
+        }
     }
 
 }
