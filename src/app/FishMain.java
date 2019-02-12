@@ -27,6 +27,8 @@ public class FishMain {
 
         startBlack(1000);
 
+        checkFish(1000);
+
         openInventory(1000);
 
         closeInventory(500);
@@ -46,6 +48,18 @@ public class FishMain {
         clickMouseLeft(2344, 1057);
         clickMouseLeft(2344, 972);
         System.out.println("Start Black");
+    }
+
+    static private void checkFish(int delayTime) {
+        robot.delay(delayTime);
+        color = getColorInfo(1202, 47);
+        //System.out.println(color.toString());
+
+        //[r=217,g=181,b=57]
+        if ((color.getRed() > 210 && color.getRed() < 225)  && (color.getGreen() > 170 && color.getGreen() < 190) && (color.getBlue() > 50 && color.getBlue() < 65)) {
+            clickKey(KeyEvent.VK_SPACE);
+        }
+        robot.delay(3000);
     }
 
     static private void openInventory(int delayTime) {
