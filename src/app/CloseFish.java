@@ -1,10 +1,21 @@
 package app;
 
+import java.awt.Robot;
 import java.awt.event.KeyEvent;
 
 import app.util.Common;
 
 public class CloseFish extends Common {
+
+    private static Robot robot;
+
+    static {
+        try {
+            robot = new Robot();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
 
     public static void main(String[] args) throws Exception {
 

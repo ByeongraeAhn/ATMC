@@ -19,6 +19,14 @@ public class StartFish extends Common {
     private static final int Y_GAP = 46;
 
     private static int pageIndex = 1;
+    
+    static {
+        try {
+            robot = new Robot();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
 
     public static void main(String[] args) throws Exception {
 
@@ -41,10 +49,13 @@ public class StartFish extends Common {
 
     static public void checkFish(int delayTime) {
         robot.delay(delayTime);
-        color = getColorInfo(1202, 47);
+        Color color1 = getColorInfo(1202, 47);
+        Color color2 = getColorInfo(1202, 77);
 
         //[r=217,g=181,b=57]
-        if ((color.getRed() > 210 && color.getRed() < 225)  && (color.getGreen() > 170 && color.getGreen() < 190) && (color.getBlue() > 50 && color.getBlue() < 65)) {
+        //[r=192,g=160,b=50]
+        if ((color1.getRed() > 190 && color1.getRed() < 225)  && (color1.getGreen() > 155 && color1.getGreen() < 190) && (color1.getBlue() > 45 && color1.getBlue() < 65) 
+        || (color2.getRed() > 190 && color2.getRed() < 225)  && (color2.getGreen() > 155 && color2.getGreen() < 190) && (color2.getBlue() > 45 && color2.getBlue() < 65)) {
             clickKey(KeyEvent.VK_SPACE);
         }
         robot.delay(3000);
