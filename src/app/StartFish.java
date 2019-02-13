@@ -42,7 +42,6 @@ public class StartFish extends Common {
     static public void checkFish(int delayTime) {
         robot.delay(delayTime);
         color = getColorInfo(1202, 47);
-        //System.out.println(color.toString());
 
         //[r=217,g=181,b=57]
         if ((color.getRed() > 210 && color.getRed() < 225)  && (color.getGreen() > 170 && color.getGreen() < 190) && (color.getBlue() > 50 && color.getBlue() < 65)) {
@@ -65,8 +64,9 @@ public class StartFish extends Common {
                 robot.delay(50);
                 robot.mouseMove(x, y);
                 color = getColorInfo(x, y);
-                // if (color.getGreen() > 150 && color.getRed() < 140 ) {
-                if((color.getGreen()>100 && color.getGreen()<150) && color.getRed() < 140 && color.getBlue() <110 ) {
+
+                //System.out.println(color.toString());
+                if((color.getGreen() > 100 && color.getGreen() < 150) && color.getRed() < 140 && color.getBlue() < 110) {
                     robot.mouseMove(x, y+15);
                     robot.delay(100);
                     color = getColorInfo(2025, 289);
@@ -75,6 +75,8 @@ public class StartFish extends Common {
                         deleteItem(1000, x , y);
                     }
                 }
+
+
                 x += X_GAP;
             }
             x = startPointX;
