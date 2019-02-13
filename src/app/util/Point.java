@@ -1,4 +1,4 @@
-package app;
+package app.util;
 
 import java.awt.AWTException;
 import java.awt.MouseInfo;

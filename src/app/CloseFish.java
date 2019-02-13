@@ -2,6 +2,8 @@ package app;
 
 import java.awt.event.KeyEvent;
 
+import app.util.Common;
+
 public class CloseFish extends Common {
 
     public static void main(String[] args) throws Exception {
