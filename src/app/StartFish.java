@@ -34,7 +34,7 @@ public class StartFish extends Common {
 
         checkFish(1000);
 
-        openInventory(1000);
+        openInventory(500);
 
         closeInventory(500);
 
@@ -54,8 +54,8 @@ public class StartFish extends Common {
 
         //[r=217,g=181,b=57]
         //[r=192,g=160,b=50]
-        if ((color1.getRed() > 190 && color1.getRed() < 225)  && (color1.getGreen() > 155 && color1.getGreen() < 190) && (color1.getBlue() > 45 && color1.getBlue() < 65) 
-        || (color2.getRed() > 190 && color2.getRed() < 225)  && (color2.getGreen() > 155 && color2.getGreen() < 190) && (color2.getBlue() > 45 && color2.getBlue() < 65)) {
+        if ((color1.getRed() > 185 && color1.getRed() < 230)  && (color1.getGreen() > 150 && color1.getGreen() < 195) && (color1.getBlue() > 40 && color1.getBlue() < 65) 
+        || (color2.getRed() > 185 && color2.getRed() < 230)  && (color2.getGreen() > 150 && color2.getGreen() < 195) && (color2.getBlue() > 40 && color2.getBlue() < 65)) {
             clickKey(KeyEvent.VK_SPACE);
         }
         robot.delay(3000);
@@ -76,7 +76,10 @@ public class StartFish extends Common {
                 robot.mouseMove(x, y);
                 color = getColorInfo(x, y);
 
-                //System.out.println(color.toString());
+                //yellow : [r=150,g=136,b=127] [r=147,g=135,b=110] [r=160,g=145,b=110]
+                //red : [r=130,g=85,b=91] [r=135,g=87,b=90]
+                //blue : [r=101,g=132,b=152] [r=100,g=132,b=152] [r=97,g=141,b=167]
+
                 if((color.getGreen() > 100 && color.getGreen() < 150) && color.getRed() < 140 && color.getBlue() < 110) {
                     robot.mouseMove(x, y+15);
                     robot.delay(100);
@@ -85,6 +88,11 @@ public class StartFish extends Common {
                         System.out.println((i+1)+"Row, " + (j+1) + "Column is Green");
                         deleteItem(1000, x , y);
                     }
+                }
+                
+                if ((color.getRed() > 90 && color.getRed() < 110)  && (color.getGreen() > 120 && color.getGreen() < 150) && (color.getBlue() > 140 && color.getBlue() < 180) ) {
+                    System.out.println((i+1)+"Row, " + (j+1) + "Column is Blue");
+                    //deleteItem(1000, x , y);
                 }
 
 
