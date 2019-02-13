@@ -5,25 +5,20 @@ import java.awt.Robot;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 
-public class StartFish {
+public class StartFish extends Common {
 
     private static Robot robot;
     private static Color color;
 
-    // private static int startPointX = 2335;
-    // private static int startPointY = 255;
     private static int startPointX = 2190;
     private static int startPointY = 360;
 
-    // private static final int X_GAP = 65;
-    // private static final int Y_GAP = 65;
     private static final int X_GAP = 46;
     private static final int Y_GAP = 46;
 
     private static int pageIndex = 1;
 
     public static void main(String[] args) throws Exception {
-        robot = new Robot();
 
         startBlack(1000);
 
@@ -40,17 +35,9 @@ public class StartFish {
         closeInventory(1000);
 
         exitBlack(1000);
-
     }
 
-    static private void startBlack(int delayTime) {
-        robot.delay(delayTime);
-        clickMouseLeft(2344, 1057);
-        clickMouseLeft(2344, 972);
-        System.out.println("Start Black");
-    }
-
-    static private void checkFish(int delayTime) {
+    static public void checkFish(int delayTime) {
         robot.delay(delayTime);
         color = getColorInfo(1202, 47);
         //System.out.println(color.toString());
@@ -62,14 +49,8 @@ public class StartFish {
         robot.delay(3000);
     }
 
-    static private void openInventory(int delayTime) {
-        robot.delay(delayTime);
-        clickKey(KeyEvent.VK_I);
-        System.out.println("Open Inventory");
-    }
 
-
-    static private void arrangeItem(int delayTime, int startPointX, int startPointY) {
+    static public void arrangeItem(int delayTime, int startPointX, int startPointY) {
         robot.delay(delayTime);
 
         System.out.println("PageIndex : " + pageIndex);
@@ -99,19 +80,12 @@ public class StartFish {
         }
         
         if (pageIndex < 3) {
-            scrollNextPage(1000);
+            scrollToNextInventory(1000);
             arrangeItem(1000, startPointX, startPointY);
         }
-
-        
     }
 
-    static private Color getColorInfo(int x, int y) {
-        color = robot.getPixelColor(x, y);
-        return color;
-    }
-
-    static private void deleteItem(int delayTime, int x, int y) {
+    static public void deleteItem(int delayTime, int x, int y) {
         robot.delay(delayTime);
         robot.mouseMove(x, y+15);
         robot.delay(100);
@@ -130,61 +104,11 @@ public class StartFish {
         clickKey(KeyEvent.VK_ENTER);
     }
 
-    static private void scrollNextPage(int delayTime) {
+    static public void scrollToNextInventory(int delayTime) {
         robot.delay(delayTime);
         robot.mouseMove(startPointX, startPointY);
         scrollWheel(8);
         pageIndex++;
-    }
-
-    static private void closeInventory(int delayTime) {
-        robot.delay(delayTime);
-        clickKey(KeyEvent.VK_ESCAPE);
-        System.out.println("Close Inventory");
-    }
-
-
-    static private void exitBlack(int delayTime) {
-        robot.delay(delayTime);
-        clickKey(KeyEvent.VK_ESCAPE);
-        clickMouseLeft(1387, 699);
-        clickMouseLeft(1353, 611);
-    }
-
-    //////////////////////////////////////////////////////////////////////
-
-    static private void clickMouseLeft(int x, int y) {
-        robot.mouseMove(x, y);
-        robot.delay(300);
-        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-        robot.delay(50);
-        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-        robot.delay(200);
-    }
-
-    static private void clickMouseRight(int x, int y) {
-        robot.mouseMove(x, y);
-        robot.delay(300);
-        robot.mousePress(InputEvent.BUTTON3_DOWN_MASK);
-        robot.delay(50);
-        robot.mouseRelease(InputEvent.BUTTON3_DOWN_MASK);
-        robot.delay(200);
-    }
-
-    static private void clickKey(int keyCode) {
-        robot.delay(300);
-        robot.keyPress(keyCode);
-        robot.delay(50);
-        robot.keyRelease(keyCode);
-        robot.delay(200);
-    }
-
-    static private void scrollWheel(int num) {
-        robot.delay(300);
-        for (int i = 0; i < num; i++) {
-            robot.delay(100);
-            robot.mouseWheel(1);
-        }
     }
 
 }

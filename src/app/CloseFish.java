@@ -1,15 +1,10 @@
 package app;
 
-import java.awt.Robot;
-import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 
-public class CloseFish {
-
-    private static Robot robot;
+public class CloseFish extends Common {
 
     public static void main(String[] args) throws Exception {
-        robot = new Robot();
 
         startBlack(1000);
 
@@ -34,41 +29,22 @@ public class CloseFish {
         exitBlack(30000);
     }
 
-    static private void startBlack(int delayTime) {
-        robot.delay(delayTime);
-        clickMouseLeft(2344, 1057);
-        clickMouseLeft(2344, 972);
-        System.out.println("Start Black");
-    }
-
-    static private void openInventory(int delayTime) {
-        robot.delay(delayTime);
-        clickKey(KeyEvent.VK_I);
-        System.out.println("Open Inventory");
-    }
-
-    static private void releaseRod(int delayTime) {
+    static public void releaseRod(int delayTime) {
         robot.delay(delayTime);
         clickMouseRight(1908, 559);
     }
 
-    static private void closeInventory(int delayTime) {
-        robot.delay(delayTime);
-        clickKey(KeyEvent.VK_ESCAPE);
-        System.out.println("Close Inventory");
-    }
-
-    static private void clickShipIcon(int delayTime) {
+    static public void clickShipIcon(int delayTime) {
         robot.delay(delayTime);
         clickMouseLeft(28, 148);
     }
 
-    static private void moveShip(int delayTime) {
+    static public void moveShip(int delayTime) {
         robot.delay(delayTime);
         clickKey(KeyEvent.VK_T);
     }
 
-    static private void exitToHome() {
+    static public void exitToHome() {
         robot.delay(60000);
         robot.delay(60000);
         robot.delay(60000);
@@ -80,7 +56,7 @@ public class CloseFish {
         clickKey(KeyEvent.VK_ENTER);
     }
 
-    static private void moveToSaka(int delayTime) {
+    static public void moveToSaka(int delayTime) {
         robot.delay(delayTime);
         clickKey(KeyEvent.VK_ESCAPE);
         clickMouseLeft(1387, 699);
@@ -94,50 +70,6 @@ public class CloseFish {
         clickMouseLeft(1324, 520);
         clickMouseLeft(1373, 650);
         clickKey(KeyEvent.VK_ENTER);
-    }
-
-    static private void exitBlack(int delayTime) {
-        robot.delay(delayTime);
-        clickKey(KeyEvent.VK_ESCAPE);
-        clickMouseLeft(1387, 699);
-        clickMouseLeft(1353, 611);
-    }
-
-    //////////////////////////////////////////////////////////////////////
-
-    static private void clickMouseLeft(int x, int y) {
-        robot.mouseMove(x, y);
-        robot.delay(300);
-        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-        robot.delay(50);
-        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-        robot.delay(200);
-    }
-
-    static private void clickMouseRight(int x, int y) {
-        robot.mouseMove(x, y);
-        robot.delay(300);
-        robot.mousePress(InputEvent.BUTTON3_DOWN_MASK);
-        robot.delay(50);
-        robot.mouseRelease(InputEvent.BUTTON3_DOWN_MASK);
-        robot.delay(200);
-    }
-
-    static private void clickKey(int keyCode) {
-        robot.delay(300);
-        robot.keyPress(keyCode);
-        robot.delay(50);
-        robot.keyRelease(keyCode);
-        robot.delay(200);
-    }
-
-    static private void scrollWheel(int num) {
-        robot.delay(300);
-        for (int i = 0; i < num; i++) {
-            robot.delay(100);
-            robot.mouseWheel(1);
-            robot.delay(200);
-        }
     }
 
 }
