@@ -78,21 +78,29 @@ public class StartFish extends Common {
 
                 //yellow : [r=150,g=136,b=127] [r=147,g=135,b=110] [r=160,g=145,b=110]
                 //red : [r=130,g=85,b=91] [r=135,g=87,b=90]
-                //blue : [r=101,g=132,b=152] [r=100,g=132,b=152] [r=97,g=141,b=167]
+                //blue : [r=101,g=132,b=152] [r=100,g=132,b=152] [r=97,g=141,b=167] [r=88,g=146,b=179] [r=76,g=150,b=190]
 
+                //check green
                 if((color.getGreen() > 100 && color.getGreen() < 150) && color.getRed() < 140 && color.getBlue() < 110) {
                     robot.mouseMove(x, y+15);
                     robot.delay(100);
                     color = getColorInfo(2025, 289);
-                    if(color.getGreen()<150) {
+                    if(color.getGreen() < 150) {
                         System.out.println((i+1)+"Row, " + (j+1) + "Column is Green");
                         deleteItem(1000, x , y);
                     }
                 }
                 
-                if ((color.getRed() > 90 && color.getRed() < 110)  && (color.getGreen() > 120 && color.getGreen() < 150) && (color.getBlue() > 140 && color.getBlue() < 180) ) {
-                    System.out.println((i+1)+"Row, " + (j+1) + "Column is Blue");
-                    //deleteItem(1000, x , y);
+                //check blue
+                if ((color.getRed() > 70 && color.getRed() < 110)  && (color.getGreen() > 120 && color.getGreen() < 160) && (color.getBlue() > 140 && color.getBlue() < 200) ) {
+                    robot.mouseMove(x, y+15);
+                    robot.delay(100);
+                    color = getColorInfo(1977, 288);
+                    System.out.println(color.toString());
+                    if(color.getBlue() < 230) {
+                        System.out.println((i+1)+"Row, " + (j+1) + "Column is Blue");
+                        deleteItem(1000, x , y);
+                    }
                 }
 
 
