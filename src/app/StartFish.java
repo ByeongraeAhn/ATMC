@@ -5,7 +5,7 @@ import java.awt.Robot;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 
-public class FishMain {
+public class StartFish {
 
     private static Robot robot;
     private static Color color;

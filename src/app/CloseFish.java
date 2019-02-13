@@ -4,7 +4,7 @@ import java.awt.Robot;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 
-public class HoemMain {
+public class CloseFish {
 
     private static Robot robot;
 
