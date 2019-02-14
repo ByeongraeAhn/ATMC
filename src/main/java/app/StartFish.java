@@ -5,7 +5,12 @@ import java.awt.Robot;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import app.util.Common;
+import ch.qos.logback.classic.LoggerContext;
+import ch.qos.logback.core.util.StatusPrinter;
 
 public class StartFish extends Common {
 
@@ -30,21 +35,29 @@ public class StartFish extends Common {
 
     public static void main(String[] args) throws Exception {
 
-        startBlack(1000);
+        Logger logger = LoggerFactory.getLogger(StartFish.class);
 
-        checkFish(1000);
+    	logger.trace("Hello trace");
+        logger.debug("Hello debug");
+    	logger.info("Hello info");
+    	logger.warn("Hello warn");
+        logger.error("Hello error");
 
-        openInventory(500);
+        // startBlack(1000);
 
-        closeInventory(500);
+        // checkFish(1000);
 
-        openInventory(500);
+        // openInventory(500);
 
-        arrangeItem(1000, startPointX, startPointY);
+        // closeInventory(500);
 
-        closeInventory(1000);
+        // openInventory(500);
 
-        exitBlack(1000);
+        // arrangeItem(1000, startPointX, startPointY);
+
+        // closeInventory(1000);
+
+        // exitBlack(1000);
     }
 
     static public void checkFish(int delayTime) {
@@ -102,7 +115,6 @@ public class StartFish extends Common {
                         deleteItem(1000, x , y);
                     }
                 }
-
 
                 x += X_GAP;
             }
