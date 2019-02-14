@@ -12,7 +12,7 @@ import app.util.Common;
 
 public class StartFish extends Common {
 
-    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+    private static final Logger logger = LoggerFactory.getLogger(StartFish.class);
 
     private static Robot robot;
     private static Color color;

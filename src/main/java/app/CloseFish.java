@@ -10,7 +10,7 @@ import app.util.Common;
 
 public class CloseFish extends Common {
 
-    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+    private static final Logger logger = LoggerFactory.getLogger(CloseFish.class);
 
     private static Robot robot;
 
