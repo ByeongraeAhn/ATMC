@@ -9,10 +9,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import app.util.Common;
-import ch.qos.logback.classic.LoggerContext;
-import ch.qos.logback.core.util.StatusPrinter;
 
 public class StartFish extends Common {
+
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     private static Robot robot;
     private static Color color;
@@ -35,29 +35,21 @@ public class StartFish extends Common {
 
     public static void main(String[] args) throws Exception {
 
-        Logger logger = LoggerFactory.getLogger(StartFish.class);
+        startBlack(1000);
 
-    	logger.trace("Hello trace");
-        logger.debug("Hello debug");
-    	logger.info("Hello info");
-    	logger.warn("Hello warn");
-        logger.error("Hello error");
+        checkFish(1000);
 
-        // startBlack(1000);
+        openInventory(500);
 
-        // checkFish(1000);
+        closeInventory(500);
 
-        // openInventory(500);
+        openInventory(500);
 
-        // closeInventory(500);
+        arrangeItem(1000, startPointX, startPointY);
 
-        // openInventory(500);
+        closeInventory(1000);
 
-        // arrangeItem(1000, startPointX, startPointY);
-
-        // closeInventory(1000);
-
-        // exitBlack(1000);
+        exitBlack(1000);
     }
 
     static public void checkFish(int delayTime) {
