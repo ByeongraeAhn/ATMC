@@ -40,7 +40,11 @@ public class CloseFish extends Common {
 
         moveShip(2000);
 
-        exitToHome();
+        exitBlack(2000);
+        Thread.sleep(360000);
+        startBlack(1000);
+
+        exitToHome(1000);
 
         moveToSaka(20000);
 
@@ -62,13 +66,8 @@ public class CloseFish extends Common {
         clickKey(KeyEvent.VK_T);
     }
 
-    static public void exitToHome() {
-        robot.delay(60000);
-        robot.delay(60000);
-        robot.delay(60000);
-        robot.delay(60000);
-        robot.delay(60000);
-        robot.delay(60000);
+    static public void exitToHome(int delayTime) {
+        robot.delay(delayTime);
         clickKey(KeyEvent.VK_ESCAPE);
         clickMouseLeft(1335, 408);
         clickKey(KeyEvent.VK_ENTER);
