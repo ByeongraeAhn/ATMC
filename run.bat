@@ -1,2 +1,2 @@
-java -jar C:/Users/ANBR/Desktop/workspace_vs/ATMC/App.jar
+java -jar target/StartFish.jar
 ::pause>nul
