@@ -45,7 +45,7 @@
 						</goals>
 						<phase>package</phase>
 						<configuration>
-							<classifier>StartFish</classifier>
+							<finalName>StartFish</finalName>
 							<archive>
 								<manifest>
 									<mainClass>app.StartFish</mainClass>
@@ -60,7 +60,7 @@
 						</goals>
 						<phase>package</phase>
 						<configuration>
-							<classifier>CloseFish</classifier>
+							<finalName>CloseFish</finalName>
 							<archive>
 								<manifest>
 									<mainClass>app.CloseFish</mainClass>
