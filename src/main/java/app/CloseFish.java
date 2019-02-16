@@ -48,7 +48,7 @@ public class CloseFish extends Common {
 
         moveToSaka(20000);
 
-        exitBlack(30000);
+        exitBlack(33000);
     }
 
     static public void releaseRod(int delayTime) {
@@ -77,7 +77,7 @@ public class CloseFish extends Common {
         robot.delay(delayTime);
         clickKey(KeyEvent.VK_ESCAPE);
         clickMouseLeft(1387, 699);
-        clickMouseLeft(1511, 571);
+        clickMouseLeft(1050, 571);
         clickMouseLeft(1334, 464);
         robot.mouseMove(1334, 464 + 15);
         scrollWheel(7);
