@@ -58,7 +58,7 @@ public class CloseFish extends Common {
 
     static public void clickShipIcon(int delayTime) {
         robot.delay(delayTime);
-        clickMouseLeft(28, 148);
+        clickMouseLeft(70, 148);
     }
 
     static public void moveShip(int delayTime) {

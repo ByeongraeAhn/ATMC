@@ -97,16 +97,16 @@ public class StartFish extends Common {
                 }
                 
                 //check blue
-                if ((color.getRed() > 70 && color.getRed() < 110)  && (color.getGreen() > 120 && color.getGreen() < 160) && (color.getBlue() > 140 && color.getBlue() < 200) ) {
-                    robot.mouseMove(x, y+15);
-                    robot.delay(100);
-                    color = getColorInfo(1977, 288);
-                    System.out.println(color.toString());
-                    if(color.getBlue() < 230) {
-                        System.out.println((i+1)+"Row, " + (j+1) + "Column is Blue");
-                        deleteItem(1000, x , y);
-                    }
-                }
+                // if ((color.getRed() > 70 && color.getRed() < 110)  && (color.getGreen() > 120 && color.getGreen() < 160) && (color.getBlue() > 140 && color.getBlue() < 200) ) {
+                //     robot.mouseMove(x, y+15);
+                //     robot.delay(100);
+                //     color = getColorInfo(1977, 288);
+                //     System.out.println(color.toString());
+                //     if(color.getBlue() < 230) {
+                //         System.out.println((i+1)+"Row, " + (j+1) + "Column is Blue");
+                //         deleteItem(1000, x , y);
+                //     }
+                // }
 
                 x += X_GAP;
             }
