@@ -41,7 +41,7 @@ public class CloseFish extends Common {
         moveShip(2000);
 
         exitBlack(2000);
-        Thread.sleep(360000);
+        Thread.sleep(150000);
         startBlack(1000);
 
         exitToHome(1000);
@@ -76,7 +76,7 @@ public class CloseFish extends Common {
     static public void moveToSaka(int delayTime) {
         robot.delay(delayTime);
         clickKey(KeyEvent.VK_ESCAPE);
-        clickMouseLeft(1387, 699);
+        clickMouseLeft(1100, 725);
         clickMouseLeft(1050, 571);
         clickMouseLeft(1334, 464);
         robot.mouseMove(1334, 464 + 15);
