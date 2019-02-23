@@ -93,9 +93,9 @@ public class StartFish extends Common {
                     robot.mouseMove(x, y + 15);
                     robot.delay(100);
                     Color colorYumul = getColorInfo(2025, 289);
-                    Color colorBeer = getColorInfo(2024, 550);
+                    Color colorBeer = getColorInfo(1911, 590);
                     Color colorSilverKey = getColorInfo(2052, 534);
-                    if (colorYumul.getGreen() < 150 && colorBeer.getRed() < 150 && colorSilverKey.getRed() < 150) {
+                    if (colorYumul.getGreen() < 150 && colorBeer.getRed() < 120 && colorSilverKey.getRed() < 150) {
                         System.out.println((i + 1) + "Row, " + (j + 1) + "Column is Green");
                         deleteItem(300, x, y);
                     }
