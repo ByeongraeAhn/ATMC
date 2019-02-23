@@ -137,10 +137,13 @@ public class StartFish extends Common {
     static public void changeRod(int delayTime) {
         robot.delay(delayTime);
         clickKey(KeyEvent.VK_I);
+        color = getColorInfo(startPointX, startPointY);
         robot.delay(500);
-        clickMouseRight(2189, 379);
-        robot.delay(500);
-        clickKey(KeyEvent.VK_SPACE);
+        if (!((color.getRed() > 120 && color.getRed() < 160) && (color.getGreen() > 30 && color.getGreen() < 60) && (color.getBlue() > 50 && color.getBlue() < 80))) {
+            clickMouseRight(2189, 379);
+            robot.delay(500);
+            clickKey(KeyEvent.VK_SPACE);
+        }
         robot.delay(500);
         clickKey(KeyEvent.VK_I);
     }

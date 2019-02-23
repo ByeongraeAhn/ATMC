@@ -43,7 +43,7 @@ public class CloseFish extends Common {
         moveShip(2000);
 
         exitBlack(2000);
-        Thread.sleep(150000);
+        Thread.sleep(300000);
         startBlack(1000);
 
         exitToHome(1000);
