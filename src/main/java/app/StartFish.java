@@ -39,8 +39,6 @@ public class StartFish extends Common {
 
         doWork(1000);
 
-        checkFish(1000);
-
         openInventory(500);
 
         closeInventory(500);
@@ -50,6 +48,8 @@ public class StartFish extends Common {
         arrangeItem(1000, startPointX, startPointY);
 
         closeInventory(1000);
+
+        changeRod(1000);
 
         exitBlack(1000);
     }
@@ -69,22 +69,7 @@ public class StartFish extends Common {
         clickKey(KeyEvent.VK_ESCAPE);
     }
 
-    static public void checkFish(int delayTime) {
-        robot.delay(delayTime);
-        Color color1 = getColorInfo(1202, 47);
-        Color color2 = getColorInfo(1202, 77);
 
-        // [r=217,g=181,b=57]
-        // [r=192,g=160,b=50]
-        if ((color1.getRed() > 185 && color1.getRed() < 230) && (color1.getGreen() > 150 && color1.getGreen() < 195)
-                && (color1.getBlue() > 40 && color1.getBlue() < 65)
-                || (color2.getRed() > 185 && color2.getRed() < 230)
-                        && (color2.getGreen() > 150 && color2.getGreen() < 195)
-                        && (color2.getBlue() > 40 && color2.getBlue() < 65)) {
-            clickKey(KeyEvent.VK_SPACE);
-        }
-        robot.delay(3000);
-    }
 
     static public void arrangeItem(int delayTime, int startPointX, int startPointY) {
         robot.delay(delayTime);
@@ -170,5 +155,33 @@ public class StartFish extends Common {
         scrollWheel(8);
         pageIndex++;
     }
+
+    static public void changeRod(int delayTime) {
+        robot.delay(delayTime);
+        clickKey(KeyEvent.VK_I);
+        robot.delay(500);
+        clickMouseRight(2189, 379);
+        robot.delay(500);
+        clickKey(KeyEvent.VK_SPACE);
+        robot.delay(500);
+        clickKey(KeyEvent.VK_I);
+    }
+
+    // static public void checkFish(int delayTime) {
+    //     robot.delay(delayTime);
+    //     Color color1 = getColorInfo(1202, 47);
+    //     Color color2 = getColorInfo(1202, 77);
+
+    //     // [r=217,g=181,b=57]
+    //     // [r=192,g=160,b=50]
+    //     if ((color1.getRed() > 185 && color1.getRed() < 230) && (color1.getGreen() > 150 && color1.getGreen() < 195)
+    //             && (color1.getBlue() > 40 && color1.getBlue() < 65)
+    //             || (color2.getRed() > 185 && color2.getRed() < 230)
+    //                     && (color2.getGreen() > 150 && color2.getGreen() < 195)
+    //                     && (color2.getBlue() > 40 && color2.getBlue() < 65)) {
+    //         clickKey(KeyEvent.VK_SPACE);
+    //     }
+    //     robot.delay(3000);
+    // }
 
 }

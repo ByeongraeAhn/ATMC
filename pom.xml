@@ -73,23 +73,6 @@
 							</archive>
 						</configuration>
 					</execution>
-					<execution>
-						<id>Work</id>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-						<phase>package</phase>
-						<configuration>
-							<finalName>Work</finalName>
-							<archive>
-								<manifest>
-									<mainClass>app.Work</mainClass>
-									<addClasspath>true</addClasspath>
-									<classpathPrefix>libs/</classpathPrefix>
-								</manifest>
-							</archive>
-						</configuration>
-					</execution>
 				</executions>
 			</plugin>
 
