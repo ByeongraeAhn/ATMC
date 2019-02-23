@@ -37,6 +37,8 @@ public class StartFish extends Common {
 
         startBlack(1000);
 
+        doWork(1000);
+
         checkFish(1000);
 
         openInventory(500);
@@ -50,6 +52,21 @@ public class StartFish extends Common {
         closeInventory(1000);
 
         exitBlack(1000);
+    }
+
+    static public void doWork(int delayTime) {
+        robot.delay(delayTime);
+        clickKey(KeyEvent.VK_CONTROL);
+        robot.delay(1000);
+        clickMouseLeft(182, 149);
+        robot.delay(1000);
+        clickMouseLeft(2208, 801);
+        robot.delay(1000);
+        clickMouseLeft(1943, 502);
+        robot.delay(1000);
+        clickMouseLeft(2327, 802);
+        robot.delay(1000);
+        clickKey(KeyEvent.VK_ESCAPE);
     }
 
     static public void checkFish(int delayTime) {
