@@ -56,15 +56,15 @@ public class StartFish extends Common {
     static public void doWork(int delayTime) {
         robot.delay(delayTime);
         clickKey(KeyEvent.VK_CONTROL);
-        robot.delay(1000);
+        robot.delay(500);
         clickMouseLeft(182, 149);
-        robot.delay(1000);
+        robot.delay(500);
         clickMouseLeft(2208, 801);
-        robot.delay(1000);
+        robot.delay(500);
         clickMouseLeft(1943, 502);
-        robot.delay(1000);
+        robot.delay(500);
         clickMouseLeft(2327, 802);
-        robot.delay(1000);
+        robot.delay(500);
         clickKey(KeyEvent.VK_ESCAPE);
     }
 
