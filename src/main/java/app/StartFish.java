@@ -2,7 +2,6 @@ package app;
 
 import java.awt.Color;
 import java.awt.Robot;
-import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 
 import org.slf4j.Logger;
@@ -69,8 +68,6 @@ public class StartFish extends Common {
         clickKey(KeyEvent.VK_ESCAPE);
     }
 
-
-
     static public void arrangeItem(int delayTime, int startPointX, int startPointY) {
         robot.delay(delayTime);
 
@@ -100,7 +97,7 @@ public class StartFish extends Common {
                     Color colorSilverKey = getColorInfo(2052, 534);
                     if (colorYumul.getGreen() < 150 && colorBeer.getRed() < 150 && colorSilverKey.getRed() < 150) {
                         System.out.println((i + 1) + "Row, " + (j + 1) + "Column is Green");
-                        deleteItem(1000, x , y);
+                        deleteItem(300, x, y);
                     }
                 }
 
@@ -130,25 +127,6 @@ public class StartFish extends Common {
         }
     }
 
-    static public void deleteItem(int delayTime, int x, int y) {
-        robot.delay(delayTime);
-        robot.mouseMove(x, y + 15);
-        robot.delay(100);
-        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-        robot.delay(100);
-        robot.mouseMove(2507, 794);
-        robot.delay(300);
-        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-        robot.delay(300);
-        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-        robot.delay(300);
-        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-
-        clickKey(KeyEvent.VK_F);
-        clickMouseLeft(2429, 1031);
-        clickKey(KeyEvent.VK_ENTER);
-    }
-
     static public void scrollToNextInventory(int delayTime) {
         robot.delay(delayTime);
         robot.mouseMove(startPointX, startPointY);
@@ -168,20 +146,21 @@ public class StartFish extends Common {
     }
 
     // static public void checkFish(int delayTime) {
-    //     robot.delay(delayTime);
-    //     Color color1 = getColorInfo(1202, 47);
-    //     Color color2 = getColorInfo(1202, 77);
+    // robot.delay(delayTime);
+    // Color color1 = getColorInfo(1202, 47);
+    // Color color2 = getColorInfo(1202, 77);
 
-    //     // [r=217,g=181,b=57]
-    //     // [r=192,g=160,b=50]
-    //     if ((color1.getRed() > 185 && color1.getRed() < 230) && (color1.getGreen() > 150 && color1.getGreen() < 195)
-    //             && (color1.getBlue() > 40 && color1.getBlue() < 65)
-    //             || (color2.getRed() > 185 && color2.getRed() < 230)
-    //                     && (color2.getGreen() > 150 && color2.getGreen() < 195)
-    //                     && (color2.getBlue() > 40 && color2.getBlue() < 65)) {
-    //         clickKey(KeyEvent.VK_SPACE);
-    //     }
-    //     robot.delay(3000);
+    // // [r=217,g=181,b=57]
+    // // [r=192,g=160,b=50]
+    // if ((color1.getRed() > 185 && color1.getRed() < 230) && (color1.getGreen() >
+    // 150 && color1.getGreen() < 195)
+    // && (color1.getBlue() > 40 && color1.getBlue() < 65)
+    // || (color2.getRed() > 185 && color2.getRed() < 230)
+    // && (color2.getGreen() > 150 && color2.getGreen() < 195)
+    // && (color2.getBlue() > 40 && color2.getBlue() < 65)) {
+    // clickKey(KeyEvent.VK_SPACE);
+    // }
+    // robot.delay(3000);
     // }
 
 }

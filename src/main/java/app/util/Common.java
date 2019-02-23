@@ -84,4 +84,23 @@ public class Common {
         }
     }
 
+    static public void deleteItem(int delayTime, int x, int y) {
+        robot.delay(delayTime);
+        robot.mouseMove(x, y + 15);
+        robot.delay(100);
+        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+        robot.delay(100);
+        robot.mouseMove(2507, 794);
+        robot.delay(300);
+        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+        robot.delay(300);
+        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+        robot.delay(300);
+        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+
+        clickKey(KeyEvent.VK_F);
+        clickMouseLeft(2429, 1031);
+        clickMouseLeft(1233, 453);
+    }
+
 }
