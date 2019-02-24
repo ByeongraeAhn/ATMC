@@ -87,33 +87,20 @@ public class StartFish extends Common {
                 // blue : [r=101,g=132,b=152] [r=100,g=132,b=152] [r=97,g=141,b=167]
                 // [r=88,g=146,b=179] [r=76,g=150,b=190]
 
-                // check green
-                if ((color.getGreen() > 100 && color.getGreen() < 150) && color.getRed() < 140
-                        && color.getBlue() < 110) {
-                    robot.mouseMove(x, y + 15);
-                    robot.delay(100);
-                    Color colorYumul = getColorInfo(2025, 289);
-                    Color colorBeer = getColorInfo(1911, 590);
-                    Color colorSilverKey = getColorInfo(2052, 534);
-                    if (colorYumul.getGreen() < 150 && colorBeer.getRed() < 120 && colorSilverKey.getRed() < 150) {
-                        System.out.println((i + 1) + "Row, " + (j + 1) + "Column is Green");
-                        deleteItem(300, x, y);
+                if (!(i < 2 && j == 1)) { //Beer Check
+                    // check green
+                    if (color.getRed() < 140 && (color.getGreen() > 95 && color.getGreen() < 150) && color.getBlue() < 110) {
+                        robot.mouseMove(x, y + 15);
+                        robot.delay(100);
+                        Color colorYumul = getColorInfo(2025, 289);
+                        Color colorSilverKey = getColorInfo(2052, 534);
+                        if (colorYumul.getGreen() < 150 && colorSilverKey.getRed() < 150) {
+                            System.out.println((i + 1) + "Row, " + (j + 1) + "Column is Green");
+                            deleteItem(300, x, y);
+                        }
                     }
-                }
 
-                // check blue
-                // if ((color.getRed() > 70 && color.getRed() < 110) && (color.getGreen() > 120
-                // && color.getGreen() < 160) && (color.getBlue() > 140 && color.getBlue() <
-                // 200) ) {
-                // robot.mouseMove(x, y+15);
-                // robot.delay(100);
-                // color = getColorInfo(1977, 288);
-                // System.out.println(color.toString());
-                // if(color.getBlue() < 230) {
-                // System.out.println((i+1)+"Row, " + (j+1) + "Column is Blue");
-                // deleteItem(1000, x , y);
-                // }
-                // }
+                }
 
                 x += X_GAP;
             }
@@ -139,7 +126,8 @@ public class StartFish extends Common {
         clickKey(KeyEvent.VK_I);
         color = getColorInfo(startPointX, startPointY);
         robot.delay(500);
-        if (!((color.getRed() > 120 && color.getRed() < 160) && (color.getGreen() > 30 && color.getGreen() < 60) && (color.getBlue() > 50 && color.getBlue() < 80))) {
+        if (!((color.getRed() > 120 && color.getRed() < 160) && (color.getGreen() > 30 && color.getGreen() < 60)
+                && (color.getBlue() > 50 && color.getBlue() < 80))) {
             clickMouseRight(2189, 379);
             robot.delay(500);
             clickKey(KeyEvent.VK_SPACE);
