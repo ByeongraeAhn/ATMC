@@ -34,13 +34,7 @@ public class CloseFish extends Common {
 
         closeInventory(1000);
 
-        clickKey(KeyEvent.VK_CONTROL);
-
-        clickShipIcon(1000);
-
-        clickShipIcon(1000);
-
-        moveShip(2000);
+        startSwim(1000);
 
         exitBlack(2000);
         Thread.sleep(300000);
@@ -48,7 +42,7 @@ public class CloseFish extends Common {
 
         exitToHome(1000);
 
-        moveToSaka(20000);
+        moveToBaza(20000);
 
         exitBlack(33000);
     }
@@ -58,24 +52,30 @@ public class CloseFish extends Common {
         clickMouseRight(1908, 559);
     }
 
-    static public void clickShipIcon(int delayTime) {
+    static public void startSwim(int delayTime) {
         robot.delay(delayTime);
-        clickMouseLeft(70, 148);
-    }
-
-    static public void moveShip(int delayTime) {
-        robot.delay(delayTime);
-        clickKey(KeyEvent.VK_T);
+        robot.keyPress(KeyEvent.VK_W);
+        robot.delay(5000);
+        robot.keyRelease(KeyEvent.VK_W);
+        robot.delay(1000);
+        robot.keyPress(KeyEvent.VK_E);
+        robot.delay(10000);
+        robot.keyRelease(KeyEvent.VK_E);
+        robot.delay(1000);
+        robot.delay(1000);
+        robot.keyPress(KeyEvent.VK_T);
+        robot.delay(1000);
+        robot.keyRelease(KeyEvent.VK_T);
     }
 
     static public void exitToHome(int delayTime) {
         robot.delay(delayTime);
-        clickKey(KeyEvent.VK_ESCAPE);
-        clickMouseLeft(1335, 408);
-        clickKey(KeyEvent.VK_ENTER);
+        clickKey(KeyEvent.VK_NUMPAD9);
+        clickMouseLeft(999999, 999999);
+        clickMouseLeft(999999, 999999);
     }
 
-    static public void moveToSaka(int delayTime) {
+    static public void moveToBaza(int delayTime) {
         robot.delay(delayTime);
         clickKey(KeyEvent.VK_ESCAPE);
         clickMouseLeft(1100, 725);
