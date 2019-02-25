@@ -136,22 +136,4 @@ public class StartFish extends Common {
         clickKey(KeyEvent.VK_I);
     }
 
-    // static public void checkFish(int delayTime) {
-    // robot.delay(delayTime);
-    // Color color1 = getColorInfo(1202, 47);
-    // Color color2 = getColorInfo(1202, 77);
-
-    // // [r=217,g=181,b=57]
-    // // [r=192,g=160,b=50]
-    // if ((color1.getRed() > 185 && color1.getRed() < 230) && (color1.getGreen() >
-    // 150 && color1.getGreen() < 195)
-    // && (color1.getBlue() > 40 && color1.getBlue() < 65)
-    // || (color2.getRed() > 185 && color2.getRed() < 230)
-    // && (color2.getGreen() > 150 && color2.getGreen() < 195)
-    // && (color2.getBlue() > 40 && color2.getBlue() < 65)) {
-    // clickKey(KeyEvent.VK_SPACE);
-    // }
-    // robot.delay(3000);
-    // }
-
 }
