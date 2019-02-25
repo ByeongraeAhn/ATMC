@@ -70,9 +70,10 @@ public class CloseFish extends Common {
 
     static public void exitToHome(int delayTime) {
         robot.delay(delayTime);
-        clickKey(KeyEvent.VK_NUMPAD9);
-        clickMouseLeft(999999, 999999);
-        clickMouseLeft(999999, 999999);
+        clickKey(KeyEvent.VK_0);
+        clickKey(KeyEvent.VK_CONTROL);
+        clickMouseLeft(1275, 554);
+        clickMouseLeft(1223, 447);
     }
 
     static public void moveToBaza(int delayTime) {
