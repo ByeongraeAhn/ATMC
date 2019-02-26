@@ -5,7 +5,14 @@ import java.awt.Robot;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import app.StartFish;
+
 public class Common {
+
+    private static final Logger logger = LoggerFactory.getLogger(StartFish.class);
 
     public static Robot robot;
     public static Color color;
@@ -14,7 +21,7 @@ public class Common {
         try {
             robot = new Robot();
         } catch (Exception e) {
-            System.out.println(e);
+            logger.error(e.getMessage());
         }
     }
 
@@ -22,13 +29,11 @@ public class Common {
         robot.delay(delayTime);
         clickMouseLeft(2344, 1057);
         clickMouseLeft(2344, 972);
-        System.out.println("Start Black");
     }
 
     static public void openInventory(int delayTime) {
         robot.delay(delayTime);
         clickKey(KeyEvent.VK_I);
-        System.out.println("Open Inventory");
     }
 
     static public Color getColorInfo(int x, int y) {
@@ -39,7 +44,6 @@ public class Common {
     static public void closeInventory(int delayTime) {
         robot.delay(delayTime);
         clickKey(KeyEvent.VK_ESCAPE);
-        System.out.println("Close Inventory");
     }
 
     static public void exitBlack(int delayTime) {

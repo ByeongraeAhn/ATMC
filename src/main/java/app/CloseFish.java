@@ -18,7 +18,7 @@ public class CloseFish extends Common {
         try {
             robot = new Robot();
         } catch (Exception e) {
-            System.out.println(e);
+            logger.error(e.getMessage());
         }
     }
 

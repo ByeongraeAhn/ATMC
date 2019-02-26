@@ -24,11 +24,13 @@ public class StartFish extends Common {
 
     private static int pageIndex = 1;
 
+    private static int totalGreen = 0;
+
     static {
         try {
             robot = new Robot();
         } catch (Exception e) {
-            System.out.println(e);
+            logger.error(e.getMessage());
         }
     }
 
@@ -70,9 +72,8 @@ public class StartFish extends Common {
 
     static public void arrangeItem(int delayTime, int startPointX, int startPointY) {
         robot.delay(delayTime);
-
-        System.out.println("PageIndex : " + pageIndex);
-
+        logger.info("PageIndex : {}", pageIndex);
+        
         int x = startPointX;
         int y = startPointY;
 
@@ -95,13 +96,12 @@ public class StartFish extends Common {
                         Color colorYumul = getColorInfo(2025, 289);
                         Color colorSilverKey = getColorInfo(2052, 534);
                         if (colorYumul.getGreen() < 150 && colorSilverKey.getRed() < 150) {
-                            System.out.println((i + 1) + "Row, " + (j + 1) + "Column is Green");
+                            logger.info((i + 1) + "Row, " + (j + 1) + "Column is Green");
                             deleteItem(300, x, y);
+                            totalGreen++;
                         }
                     }
-
                 }
-
                 x += X_GAP;
             }
             x = startPointX;
@@ -112,6 +112,8 @@ public class StartFish extends Common {
             scrollToNextInventory(1000);
             arrangeItem(1000, startPointX, startPointY);
         }
+
+        logger.info("Total Green Item Count : {}", totalGreen);
     }
 
     static public void scrollToNextInventory(int delayTime) {
