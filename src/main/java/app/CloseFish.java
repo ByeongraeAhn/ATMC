@@ -30,7 +30,7 @@ public class CloseFish extends Common {
 
         deleteItem(1000, 2190, 424);
 
-        releaseRod(1000);
+        releaseRod(300);
 
         closeInventory(1000);
 
