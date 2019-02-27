@@ -59,9 +59,8 @@ public class CloseFish extends Common {
         robot.keyRelease(KeyEvent.VK_W);
         robot.delay(1000);
         robot.keyPress(KeyEvent.VK_E);
-        robot.delay(10000);
+        robot.delay(5000);
         robot.keyRelease(KeyEvent.VK_E);
-        robot.delay(1000);
         robot.delay(1000);
         robot.keyPress(KeyEvent.VK_T);
         robot.delay(1000);
