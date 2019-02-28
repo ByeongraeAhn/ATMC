@@ -47,6 +47,7 @@ public class StartFish extends Common {
         openInventory(500);
 
         arrangeItem(1000, startPointX, startPointY);
+        logger.info("Total Green Item Count : {}", totalGreen);
 
         closeInventory(1000);
 
@@ -97,7 +98,7 @@ public class StartFish extends Common {
                         Color colorSilverKey = getColorInfo(2052, 534);
                         if (colorYumul.getGreen() < 150 && colorSilverKey.getRed() < 150) {
                             logger.info((i + 1) + "Row, " + (j + 1) + "Column is Green");
-                            deleteItem(300, x, y);
+                            //deleteItem(300, x, y);
                             totalGreen++;
                         }
                     }
@@ -113,7 +114,6 @@ public class StartFish extends Common {
             arrangeItem(1000, startPointX, startPointY);
         }
 
-        logger.info("Total Green Item Count : {}", totalGreen);
     }
 
     static public void scrollToNextInventory(int delayTime) {
