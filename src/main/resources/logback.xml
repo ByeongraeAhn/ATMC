@@ -12,7 +12,7 @@
 	<!-- File -->
 	<appender name="fileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>log/%d{yyyy-MM-dd}.log</fileNamePattern>
+			<fileNamePattern>C:/Users/Anbr/Desktop/log/%d{yyyy-MM-dd}.log</fileNamePattern>
 		</rollingPolicy>
 		<encoder>
 			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{35} - %msg%n</pattern>
