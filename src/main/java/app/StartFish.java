@@ -91,7 +91,7 @@ public class StartFish extends Common {
 
                 if (!(i == 0 && j < 2 && pageIndex == 1)) { //Exclude Beer
                     // check green
-                    if (color.getRed() < 140 && (color.getGreen() > 95 && color.getGreen() < 150) && color.getBlue() < 110) {
+                    if (color.getRed() < 137 && (color.getGreen() > 95 && color.getGreen() < 150) && color.getBlue() < 110) {
                         robot.mouseMove(x, y + 15);
                         robot.delay(100);
                         Color colorYumul = getColorInfo(2025, 289);
