@@ -49,7 +49,7 @@ public class Common {
     static public void exitBlack(int delayTime) {
         robot.delay(delayTime);
         clickKey(KeyEvent.VK_ESCAPE);
-        clickMouseLeft(1100, 725);
+        clickMouseLeft(1448, 725);
         clickMouseLeft(1353, 611);
     }
 
