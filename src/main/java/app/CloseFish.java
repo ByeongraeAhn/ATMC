@@ -24,25 +24,25 @@ public class CloseFish extends Common {
 
     public static void main(String[] args) throws Exception {
 
-        startBlack(1000);
+        // startBlack(1000);
 
-        openInventory(1000);
+        // openInventory(1000);
 
-        deleteItem(1000, 2190, 424);
+        // deleteItem(1000, 2190, 424);
 
-        releaseRod(300);
+        // releaseRod(300);
 
-        closeInventory(1000);
+        // closeInventory(1000);
 
-        startSwim(1000);
+        // startSwim(1000);
 
-        exitBlack(2000);
-        Thread.sleep(300000);
-        startBlack(1000);
+        // exitBlack(2000);
+        // Thread.sleep(300000);
+        // startBlack(1000);
 
-        exitToHome(1000);
+        // exitToHome(1000);
 
-        moveToBaza(20000);
+        moveToBaza(1000);
 
         exitBlack(33000);
     }
@@ -78,7 +78,7 @@ public class CloseFish extends Common {
     static public void moveToBaza(int delayTime) {
         robot.delay(delayTime);
         clickKey(KeyEvent.VK_ESCAPE);
-        clickMouseLeft(1100, 725);
+        clickMouseLeft(1448, 725);
         clickMouseLeft(1050, 571);
         clickMouseLeft(1334, 464);
         robot.mouseMove(1334, 464 + 15);
