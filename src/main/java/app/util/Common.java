@@ -104,7 +104,7 @@ public class Common {
 
         clickKey(KeyEvent.VK_F);
         clickMouseLeft(2429, 1031);
-        clickMouseLeft(1233, 453);
+        clickMouseLeft(1233, 460);
     }
 
 }
