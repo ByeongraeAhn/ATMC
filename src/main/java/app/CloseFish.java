@@ -78,7 +78,7 @@ public class CloseFish extends Common {
     static public void moveToBaza(int delayTime) {
         robot.delay(delayTime);
         clickKey(KeyEvent.VK_ESCAPE);
-        clickMouseLeft(1448, 725);
+        clickMouseLeft(1449, 728);
         clickMouseLeft(1050, 571);
         clickMouseLeft(1334, 464);
         robot.mouseMove(1334, 464 + 15);
