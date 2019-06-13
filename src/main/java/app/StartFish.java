@@ -40,18 +40,18 @@ public class StartFish extends Common {
 
         doWork(1000);
 
-        // openInventory(500);
+        openInventory(500);
 
-        // closeInventory(500);
+        closeInventory(500);
 
-        // openInventory(500);
+        openInventory(500);
 
-        // arrangeItem(1000, startPointX, startPointY);
-        // logger.info("Total Green Item Count : {}", totalGreen);
+        arrangeItem(1000, startPointX, startPointY);
+        logger.info("Total Green Item Count : {}", totalGreen);
 
-        // closeInventory(1000);
+        closeInventory(1000);
 
-        // changeRod(1000);
+        changeRod(1000);
 
         exitBlack(1000);
     }

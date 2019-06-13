@@ -49,7 +49,7 @@ public class Common {
     static public void exitBlack(int delayTime) {
         robot.delay(delayTime);
         clickKey(KeyEvent.VK_ESCAPE);
-        clickMouseLeft(1449, 728); //moveToBaza 좌표 같이 변경해야됨
+        clickMouseLeft(1158, 726); //moveToBaza 좌표 같이 변경해야됨
         clickMouseLeft(1353, 611);
     }
 
