@@ -89,7 +89,7 @@ public class StartFish extends Common {
                 // blue : [r=101,g=132,b=152] [r=100,g=132,b=152] [r=97,g=141,b=167]
                 // [r=88,g=146,b=179] [r=76,g=150,b=190]
 
-                if (!(i == 0 && j < 2 && pageIndex == 1)) { //Exclude Beer
+                if (!(i == 0 && j < 3 && pageIndex == 1)) { //Exclude Beer, key
                     // check green
                     if (color.getRed() < 137 && (color.getGreen() > 95 && color.getGreen() < 150) && color.getBlue() < 110) {
                         robot.mouseMove(x, y + 15);
