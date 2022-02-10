@@ -21,9 +21,9 @@ public class Point {
           Color color = robot.getPixelColor(pi.getLocation().x, pi.getLocation().y);
           System.out.println("x point : " + pi.getLocation().x);
           System.out.println("y point : " + pi.getLocation().y);
-          System.out.println("red : " + color.getRed());
-          System.out.println("green : " + color.getGreen());
-          System.out.println("blue : " + color.getBlue());
+//          System.out.println("red : " + color.getRed());
+//          System.out.println("green : " + color.getGreen());
+//          System.out.println("blue : " + color.getBlue());
     
         }
       }
